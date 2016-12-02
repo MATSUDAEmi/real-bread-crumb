@@ -1,0 +1,81 @@
+#crumble li {
+	display: inline-block;
+	position: relative;
+}
+.crumb {
+	display: inline;
+	opacity: 1;
+}
+.bird {
+	display: inline-block;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 40px 20px 40px 0;
+	background: gray;
+	z-index: 1;
+  transform-origin: bottom left;
+}
+.bird.eating {
+	animation: 500ms ease 0s infinite alternate move_wing;
+}
+.bird:before {
+	content: "";
+	position: absolute;
+	top: 2px;
+	left: 18px;
+	display: block;
+	border-left: 6px solid gray;
+	border-top: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+}
+.bird:after {
+  content: "";
+	display: block;
+  width: 20px;
+  height: 15px;
+	position: absolute;
+  top: 4px;
+  left: -5px;
+  display: block;
+  border-radius: 30px 10px;
+  background: blue;
+  transform-origin: 90% 20%;
+  animation: 100ms linear 0s infinite alternate move_wing;
+}
+
+@keyframes move_wing {
+	from {
+		transform: rotateX(45deg) rotateY(0);
+	}
+	to {
+		transform: rotateX(0deg) rotateY(20deg);
+	}
+}
+
+@keyframes eat_crumb {
+	from {
+		transform: rotate(-10deg);
+	}
+	to {
+		transform: rotate(-90deg);
+	}
+}
+/* --------------------- */
+html {
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
+}
+h1 {
+	color: #666;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+a {
+	color: #999;
+}
+
+#crumble a {
+	color: #666;
+}
