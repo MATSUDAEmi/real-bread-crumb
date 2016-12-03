@@ -158,7 +158,7 @@
 							});
 						}
 					});
-					setTimeout( eatCrumb ,10000);
+					setTimeout( eatCrumb ,6000);
 			}
 		};
 		setTimeout(eatCrumb, settings.delay);
